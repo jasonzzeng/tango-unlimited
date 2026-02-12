@@ -35,7 +35,6 @@ function App() {
 
   // Timer Display State
   const [currentTime, setCurrentTime] = useState<string>("0:00");
-  // Fix: Initialize useRef with 0 to satisfy TypeScript requirement
   const timerRef = useRef<number>(0);
 
   const formatTime = (ms: number) => {
@@ -95,6 +94,13 @@ function App() {
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   }, [grid, initialGrid, relations, history, size, difficulty, startTime, isWon, finalTime]);
+
+  // Auto-clear error message
+  useEffect(() => {
+    if (!errorMessage) return;
+    const timer = setTimeout(() => setErrorMessage(null), 2500);
+    return () => clearTimeout(timer);
+  }, [errorMessage]);
 
   const startNewGame = useCallback((sz: number, diff: Difficulty) => {
     setGenerating(true);
@@ -178,10 +184,6 @@ function App() {
 
   const handleClearConfirm = () => {
     const clearedGrid = cloneGrid(initialGrid); // Reset to just initial
-    // We want to keep any cells that were in the initial grid. 
-    // The `initialGrid` variable already holds the locked state.
-    // However, if we simply setGrid(initialGrid), we might lose reference if we strictly need a deep clone.
-    
     // History needs to save current user state
     setHistory(prev => [...prev, grid]);
     setGrid(clearedGrid);
@@ -228,7 +230,6 @@ function App() {
         onClear={() => setIsClearModalOpen(true)}
         canUndo={history.length > 0}
         hintMessage={hint ? hint.msg : null}
-        errorMessage={errorMessage}
         generating={generating}
       />
 
@@ -242,6 +243,14 @@ function App() {
         lastMove={lastMove}
         invalidCells={invalidCells}
       />
+
+      <div className={styles.messageSlot}>
+        {errorMessage && (
+          <div className={styles.errorBanner}>
+            {errorMessage}
+          </div>
+        )}
+      </div>
 
       <Modal 
         isOpen={isClearModalOpen}
