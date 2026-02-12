@@ -1,13 +1,13 @@
-# Tango Unlimited
+# 🌗 Tango Unlimited
 
 A logic-based puzzle game inspired by LinkedIn’s Tango — rebuilt from scratch with unlimited generation, adjustable difficulty, and customizable grid sizes.
 
-# Live Demo:
+🔗 **Live Demo:**
 [https://jasonzzeng.github.io/tango-unlimited/](https://jasonzzeng.github.io/tango-unlimited/)
 
 ---
 
-## About
+## 🧠 About
 
 Tango Unlimited is a full-stack front-end puzzle engine that:
 
@@ -30,18 +30,18 @@ This project was built to demonstrate:
 
 ---
 
-## Features
+## 🎮 Features
 
-* Rule-based deduction gameplay
-* Unlimited puzzles
-* Easy / Medium / Hard modes
-* Adjustable grid sizes
-* Smart hint engine
-* Undo functionality
-* Confirm-clear modal
-* Completion screen with solve time
-* Persistent save (localStorage)
-* Auto-deployed to GitHub Pages
+* 🌞 / 🌙 Rule-based deduction gameplay
+* 🔁 Unlimited puzzles
+* 🎯 Easy / Medium / Hard modes
+* 📏 Adjustable grid sizes
+* 💡 Smart hint engine
+* ⏪ Undo functionality
+* 🧹 Confirm-clear modal
+* 🎉 Completion screen with solve time
+* 💾 Persistent save (localStorage)
+* 🚀 Auto-deployed to GitHub Pages
 
 ---
 
@@ -72,3 +72,4 @@ npm install
 npm run dev
 ```
 
+---
