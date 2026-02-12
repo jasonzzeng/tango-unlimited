@@ -13,13 +13,12 @@ interface ControlsProps {
   onClear: () => void;
   canUndo: boolean;
   hintMessage: string | null;
-  errorMessage: string | null;
   generating: boolean;
 }
 
 export const Controls: React.FC<ControlsProps> = ({
   difficulty, setDifficulty, size, setSize, onNewGame, onUndo, onHint, onClear, 
-  canUndo, hintMessage, errorMessage, generating
+  canUndo, hintMessage, generating
 }) => {
   return (
     <div className={styles.controls}>
@@ -58,7 +57,6 @@ export const Controls: React.FC<ControlsProps> = ({
       </div>
 
       {hintMessage && <div className={styles.hintText}>{hintMessage}</div>}
-      {errorMessage && <div className={styles.errorText}>{errorMessage}</div>}
     </div>
   );
 };
