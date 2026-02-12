@@ -1,0 +1,82 @@
+.boardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  gap: 2px;
+  background-color: #ccc;
+  border: 2px solid #999;
+  position: relative;
+  touch-action: manipulation;
+}
+
+.cell {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.1s;
+  position: relative;
+  user-select: none;
+}
+
+.locked {
+  background-color: #eee;
+}
+
+.highlight {
+  background-color: #ffeb3b80; /* Transparent yellow */
+}
+
+.error {
+  background: repeating-linear-gradient(
+    45deg,
+    #ffcdd2,
+    #ffcdd2 10px,
+    #ffebee 10px,
+    #ffebee 20px
+  );
+}
+
+.cell:hover:not(.locked) {
+  background-color: #f0f8ff;
+}
+
+/* Ensure error hover state is still readable but striped */
+.cell.error:hover:not(.locked) {
+  background: repeating-linear-gradient(
+    45deg,
+    #ffcdd2,
+    #ffcdd2 10px,
+    #fff 10px,
+    #fff 20px
+  );
+}
+
+.icon {
+  width: 70%;
+  height: 70%;
+}
+
+.relation {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #555;
+  z-index: 10;
+  pointer-events: none;
+}

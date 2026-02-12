@@ -1,0 +1,21 @@
+/
+├── index.html
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+├── .gitignore
+├── src/
+│   ├── main.tsx
+│   ├── App.tsx
+│   ├── App.module.css
+│   ├── types.ts
+│   ├── components/
+│   │   ├── Board.tsx
+│   │   ├── Board.module.css
+│   │   ├── Controls.tsx
+│   │   └── Controls.module.css
+│   └── logic/
+│       ├── constants.ts
+│       ├── solver.ts
+│       ├── generator.ts
+│       └── utils.ts
